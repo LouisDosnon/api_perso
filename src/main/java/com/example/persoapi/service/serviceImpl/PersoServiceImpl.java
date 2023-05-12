@@ -1,8 +1,7 @@
 package com.example.persoapi.service.serviceImpl;
 
 import com.example.persoapi.dto.PersoDto;
-import com.example.persoapi.entity.Caracteristique;
-import com.example.persoapi.entity.Perso;
+import com.example.persoapi.entity.*;
 import com.example.persoapi.repository.PersoRepository;
 import com.example.persoapi.service.PersoService;
 import org.springframework.stereotype.Service;
@@ -40,6 +39,42 @@ public class PersoServiceImpl implements PersoService {
     public Caracteristique getPersoCaracById(String idPerso) {
         Optional<Perso> perso = this.persoRepository.findById(idPerso);
         return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getCaracteristique();
+    }
+
+    @Override
+    public List<Competence> getPersoCompById(String idPerso) {
+        Optional<Perso> perso = this.persoRepository.findById(idPerso);
+        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getCompetences();
+    }
+
+    @Override
+    public List<CoupS> getPersoCoupSById(String idPerso) {
+        Optional<Perso> perso = this.persoRepository.findById(idPerso);
+        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getCoup_speciaux();
+    }
+
+    @Override
+    public Equipement getPersoEquipById(String idPerso) {
+        Optional<Perso> perso = this.persoRepository.findById(idPerso);
+        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getEquipement();
+    }
+
+    @Override
+    public List<Modificateur> getPersoModifById(String idPerso) {
+        Optional<Perso> perso = this.persoRepository.findById(idPerso);
+        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getModificateurs();
+    }
+
+    @Override
+    public Monaie getPersoMonaieById(String idPerso) {
+        Optional<Perso> perso = this.persoRepository.findById(idPerso);
+        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getMonaie();
+    }
+
+    @Override
+    public List<ObjectInv> getPersoInvById(String idPerso) {
+        Optional<Perso> perso = this.persoRepository.findById(idPerso);
+        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getInventaire();
     }
 
     public Perso persoDtoToEntiy(PersoDto persoDto) {
