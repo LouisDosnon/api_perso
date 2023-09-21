@@ -11,4 +11,28 @@ public class Monaie {
     private long argent;
     @JsonProperty("bronze")
     private long bronze;
+
+    public long getOr() {
+        return or;
+    }
+
+    public void setOr(long or) {
+        this.or = or;
+    }
+
+    public long getArgent() {
+        return argent;
+    }
+
+    public void setArgent(long argent) {
+        this.argent = argent;
+    }
+
+    public long getBronze() {
+        return bronze;
+    }
+
+    public void setBronze(long bronze) {
+        this.bronze = bronze;
+    }
 }

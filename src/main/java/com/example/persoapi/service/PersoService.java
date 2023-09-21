@@ -13,15 +13,5 @@ public interface PersoService {
 
     Caracteristique getPersoCaracById(String idPerso);
 
-    List<Competence> getPersoCompById(String idPerso);
-
-    List<CoupS> getPersoCoupSById(String idPerso);
-
     Equipement getPersoEquipById(String idPerso);
-
-    List<Modificateur> getPersoModifById(String idPerso);
-
-    Monaie getPersoMonaieById(String idPerso);
-
-    List<ObjectInv> getPersoInvById(String idPerso);
 }
