@@ -4,7 +4,6 @@ clean:
 
 build:
 	chmod +x ./gradlew
-	tree /usr
 	./gradlew build
 
 run:
