@@ -11,7 +11,7 @@ on:
 jobs:
 
   gradle:
-    uses: ./.github/workflows/gradle.yml
+    uses: ./.github/workflows/gradle-build.yml
       
   docker_image:
     permissions:
