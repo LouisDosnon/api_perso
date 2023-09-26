@@ -9,6 +9,9 @@ on:
     
 
 jobs:
+
+  gradle:
+    uses: ./.github/workflows/gradle.yml
       
   docker_image:
     permissions:
@@ -16,3 +19,4 @@ jobs:
       packages: write
     secrets: inherit
     uses: ./.github/workflows/docker-test-image-template.yml
+    needs: gradle
