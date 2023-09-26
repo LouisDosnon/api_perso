@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: make clean
-      run: make clean
-    - name: make build
-      run: make build
+    - name: gradle clean
+      run: ./gradlew clean
+    - name: gradle build
+      run: ./gradlew build
