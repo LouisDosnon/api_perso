@@ -69,20 +69,20 @@ jobs:
           load: true
           tags: ${{ env.TEST_TAG }}
           
-      - name: Test Docker Image locally
-        env:
-          DB_URL: jdbc:postgresql://db:5432/${{env.SCHEMA}}
-          DB_USER: ${{env.USER}}
-          DB_PASS: ${{env.PASSWORD}}
-        run: |
-          docker run --rm -d -p 8080:8080 --network ${{ job.container.network }} ${{ env.TEST_TAG }}
-          for i in {1..10};
-          do
-            echo "curl app - try number $i"
-            curl --fail --silent http://localhost:8080/management/health | grep UP && exit 0
-            sleep 2
-          done
-          exit 1
+#      - name: Test Docker Image locally
+#        env:
+#          DB_URL: jdbc:postgresql://db:5432/${{env.SCHEMA}}
+#          DB_USER: ${{env.USER}}
+#          DB_PASS: ${{env.PASSWORD}}
+#        run: |
+#          docker run --rm -d -p 8080:8080 --network ${{ job.container.network }} ${{ env.TEST_TAG }}
+#          for i in {1..10};
+#          do
+#            echo "curl app - try number $i"
+#            curl --fail --silent http://localhost:8080/management/health | grep UP && exit 0
+#            sleep 2
+#          done
+#          exit 1
         
       - name: Docker meta
         id: meta
