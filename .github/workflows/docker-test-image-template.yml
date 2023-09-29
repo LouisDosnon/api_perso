@@ -6,7 +6,7 @@ on:
 
 
 env:
-  TEST_TAG: ${{ github.repository }}:test
+  TEST_TAG: louis3022/perso-api:test
 
 jobs:
 
