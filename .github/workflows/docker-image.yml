@@ -6,6 +6,11 @@ on:
     types: [created]
     branches: [main, master]
     tags: v**
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
     
 
 jobs:
