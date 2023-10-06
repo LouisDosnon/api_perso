@@ -118,5 +118,4 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          env: louis3022/perso-api
+          tags: louis3022/perso-api:latest
