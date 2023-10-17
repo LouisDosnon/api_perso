@@ -21,11 +21,13 @@ public class ModificateurController {
     }
 
     @PutMapping()
+
     public boolean addtModifById(@PathVariable String id, @RequestBody Modificateur modif) {
         return this.modificateurService.addModifInModificateur(id, modif);
     }
 
     @DeleteMapping("{idModif}")
+
     public boolean deleteModifById(@PathVariable String id, @PathVariable int idModif) {
         return this.modificateurService.deleteModifFromModificateur(id, idModif);
     }

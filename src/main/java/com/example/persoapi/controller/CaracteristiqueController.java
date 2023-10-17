@@ -1,12 +1,10 @@
 package com.example.persoapi.controller;
 
 import com.example.persoapi.entity.Caracteristique;
-import com.example.persoapi.entity.Competence;
 import com.example.persoapi.service.CaracteristiqueService;
-import com.example.persoapi.service.CompetencesService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.ws.rs.core.Response;
 
 @RestController
 @RequestMapping("/persos/{id}/caracteristique")
@@ -15,7 +13,10 @@ public class CaracteristiqueController {
 
     private CaracteristiqueService caracteristiqueService;
 
-    public CaracteristiqueController(CaracteristiqueService caracteristiqueService) {this.caracteristiqueService = caracteristiqueService;}
+
+    public CaracteristiqueController(CaracteristiqueService caracteristiqueService) {
+        this.caracteristiqueService = caracteristiqueService;
+    }
 
     @GetMapping()
     public Caracteristique getCaracById(@PathVariable String id) {
@@ -23,52 +24,72 @@ public class CaracteristiqueController {
     }
 
     @PutMapping("/charisme")
-    public void ModifCharismeById(@PathVariable String id, @RequestBody int charisme) {
+
+    public Response ModifCharismeById(@PathVariable String id, @RequestBody int charisme) {
         this.caracteristiqueService.setPersoCharismeById(id, charisme);
+        return Response.ok().build();
     }
 
     @PutMapping("/courage")
-    public void ModifCourageById(@PathVariable String id, @RequestBody int courage) {
+
+    public Response ModifCourageById(@PathVariable String id, @RequestBody int courage) {
         this.caracteristiqueService.setPersoCourageById(id, courage);
+        return Response.ok().build();
     }
 
     @PutMapping("/adresse")
-    public void ModifAdresseById(@PathVariable String id, @RequestBody int adresse) {
+
+    public Response ModifAdresseById(@PathVariable String id, @RequestBody int adresse) {
         this.caracteristiqueService.setPersoAdresseById(id, adresse);
+        return Response.ok().build();
     }
 
     @PutMapping("/intelligence")
-    public void ModifIntelligenceById(@PathVariable String id, @RequestBody int intelligence) {
+
+    public Response ModifIntelligenceById(@PathVariable String id, @RequestBody int intelligence) {
         this.caracteristiqueService.setPersoIntelligenceById(id, intelligence);
+        return Response.ok().build();
     }
 
     @PutMapping("/force")
-    public void ModifForceById(@PathVariable String id, @RequestBody int force) {
+
+    public Response ModifForceById(@PathVariable String id, @RequestBody int force) {
         this.caracteristiqueService.setPersoForceById(id, force);
+        return Response.ok().build();
     }
 
     @PutMapping("/attaque")
-    public void ModifAttaqueById(@PathVariable String id, @RequestBody int attaque) {
+
+    public Response ModifAttaqueById(@PathVariable String id, @RequestBody int attaque) {
         this.caracteristiqueService.setPersoAttaqueById(id, attaque);
+        return Response.ok().build();
     }
 
     @PutMapping("/parade")
-    public void ModifParadeById(@PathVariable String id, @RequestBody int parade) {
+
+    public Response ModifParadeById(@PathVariable String id, @RequestBody int parade) {
         this.caracteristiqueService.setPersoParadeById(id, parade);
+        return Response.ok().build();
     }
 
     @PutMapping("/destin")
-    public void ModifDestinById(@PathVariable String id, @RequestBody int destin) {
+
+    public Response ModifDestinById(@PathVariable String id, @RequestBody int destin) {
         this.caracteristiqueService.setPersoDestinById(id, destin);
+        return Response.ok().build();
     }
 
     @PutMapping("/energie_astrale")
-    public void ModifEnergieAstraleById(@PathVariable String id, @RequestBody int energieAstrale) {
+
+    public Response ModifEnergieAstraleById(@PathVariable String id, @RequestBody int energieAstrale) {
         this.caracteristiqueService.setPersoEnergieAstraleById(id, energieAstrale);
+        return Response.ok().build();
     }
 
     @PutMapping("/energie_astrale_max")
-    public void ModifEnergieAstraleMaxById(@PathVariable String id, @RequestBody int energieAstraleMax) {
+
+    public Response ModifEnergieAstraleMaxById(@PathVariable String id, @RequestBody int energieAstraleMax) {
         this.caracteristiqueService.setPersoEnergieAstraleMaxById(id, energieAstraleMax);
+        return Response.ok().build();
     }
 }

@@ -1,8 +1,6 @@
 package com.example.persoapi.controller;
 
-import com.example.persoapi.entity.Competence;
 import com.example.persoapi.entity.CoupS;
-import com.example.persoapi.service.CompetencesService;
 import com.example.persoapi.service.CoupSpeService;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,11 +21,13 @@ public class CoupSpeController {
     }
 
     @PutMapping()
+
     public boolean addCoupSpeById(@PathVariable String id, @RequestBody CoupS coupSpe) {
         return this.coupSpeService.addCoupSpeInCoupSpeList(id, coupSpe);
     }
 
     @DeleteMapping("{idCoupSpe}")
+
     public boolean deleteCoupSpeById(@PathVariable String id, @PathVariable int idCoupSpe) {
         return this.coupSpeService.deleteCoupSpeFromCoupSpeList(id, idCoupSpe);
     }

@@ -21,11 +21,13 @@ public class InventaireController {
     }
 
     @PutMapping()
+
     public boolean addModifById(@PathVariable String id, @RequestBody ObjectInv objectInv) {
         return this.inventaireService.addObjectInvInInv(id, objectInv);
     }
 
     @DeleteMapping("{idObjectInv}")
+
     public boolean deleteModifById(@PathVariable String id, @PathVariable int idObjectInv) {
         return this.inventaireService.deleteObjectInvFromInv(id, idObjectInv);
     }

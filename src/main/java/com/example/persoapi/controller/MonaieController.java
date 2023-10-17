@@ -4,7 +4,7 @@ import com.example.persoapi.entity.Monaie;
 import com.example.persoapi.service.MonaieService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.ws.rs.core.Response;
 
 @RestController
 @RequestMapping("/persos/{id}/monaie")
@@ -19,7 +19,9 @@ public class MonaieController {
     }
 
     @PutMapping()
-    public void setMonaieById(@PathVariable String id, @RequestBody Monaie monaie) {
+
+    public Response setMonaieById(@PathVariable String id, @RequestBody Monaie monaie) {
         this.monaieService.setPersoMonaieById(id, monaie);
+        return Response.ok().build();
     }
 }

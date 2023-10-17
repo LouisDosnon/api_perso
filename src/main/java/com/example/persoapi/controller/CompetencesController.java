@@ -1,9 +1,7 @@
 package com.example.persoapi.controller;
 
 import com.example.persoapi.entity.Competence;
-import com.example.persoapi.entity.ObjectInv;
 import com.example.persoapi.service.CompetencesService;
-import com.example.persoapi.service.InventaireService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +20,14 @@ public class CompetencesController {
         return this.competencesService.getPersoCompetencesById(id);
     }
 
-    @PutMapping()
+    @PutMapping
+
     public boolean addCompById(@PathVariable String id, @RequestBody Competence comp) {
         return this.competencesService.addCompetencesInCompetences(id, comp);
     }
 
     @DeleteMapping("{idComp}")
+
     public boolean deleteCompById(@PathVariable String id, @PathVariable int idComp) {
         return this.competencesService.deleteCompetenceFromCompetences(id, idComp);
     }
