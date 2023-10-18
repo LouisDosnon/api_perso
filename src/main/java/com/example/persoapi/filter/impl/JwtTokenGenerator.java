@@ -5,20 +5,23 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class JwtTokenGenerator {
 
-    public static void main(String[] args) {
+    public static String generate(String login, String password) {
         // Date d'expiration du token
         Date expirationDate = new Date(System.currentTimeMillis() + 3600000); // 1 heure à partir de maintenant
 
-        // Créez le token JWT
-        String token = Jwts.builder()
-                .setSubject("utilisateur123") // Sujet (nom d'utilisateur)
-                .setExpiration(expirationDate)
-                .signWith(Keys.hmacShaKeyFor(JwtAuthenticationFilter.JWT_KEY.getBytes()), SignatureAlgorithm.HS256)
-                .compact();
+        if (Objects.equals(login, "louis3022") && Objects.equals(password, "29d55de952ef175aca7752b2e610a58b")) {
 
-        System.out.println("Token JWT généré : " + token);
+            // Créez le token JWT
+            return Jwts.builder()
+                    .setSubject("utilisateur123") // Sujet (nom d'utilisateur)
+                    .setExpiration(expirationDate)
+                    .signWith(Keys.hmacShaKeyFor(JwtAuthenticationFilter.JWT_KEY.getBytes()), SignatureAlgorithm.HS256)
+                    .compact();
+        }
+        return null;
     }
 }
