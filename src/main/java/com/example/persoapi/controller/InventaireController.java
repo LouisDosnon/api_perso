@@ -22,9 +22,8 @@ public class InventaireController {
     }
 
     @PutMapping()
-
     public Response addModifById(@PathVariable String id, @RequestBody ObjectInv objectInv) {
-        //this.inventaireService.addObjectInvInInv(id, objectInv);
+        this.inventaireService.addObjectInvInInv(id, objectInv);
         return Response.ok("element cree").build();
     }
 
