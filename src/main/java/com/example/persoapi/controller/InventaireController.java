@@ -4,6 +4,7 @@ import com.example.persoapi.entity.ObjectInv;
 import com.example.persoapi.service.InventaireService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @RestController
@@ -22,13 +23,14 @@ public class InventaireController {
 
     @PutMapping()
 
-    public boolean addModifById(@PathVariable String id, @RequestBody ObjectInv objectInv) {
-        return this.inventaireService.addObjectInvInInv(id, objectInv);
+    public Response addModifById(@PathVariable String id, @RequestBody ObjectInv objectInv) {
+        this.inventaireService.addObjectInvInInv(id, objectInv);
+        return Response.ok("element cree").build();
     }
 
     @DeleteMapping("{idObjectInv}")
-
-    public boolean deleteModifById(@PathVariable String id, @PathVariable int idObjectInv) {
-        return this.inventaireService.deleteObjectInvFromInv(id, idObjectInv);
+    public Response deleteModifById(@PathVariable String id, @PathVariable int idObjectInv) {
+        this.inventaireService.deleteObjectInvFromInv(id, idObjectInv);
+        return Response.ok("element supprime").build();
     }
 }
