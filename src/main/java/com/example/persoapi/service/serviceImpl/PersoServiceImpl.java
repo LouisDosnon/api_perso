@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service("perso")
@@ -37,14 +36,96 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
     }
 
     @Override
-    public Caracteristique getPersoCaracById(String idPerso) {
-        Optional<Perso> perso = this.persoRepository.findById(idPerso);
-        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getCaracteristique();
+    public void setPersoNomById(String idPerso, String nom) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setNom(nom);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
     }
 
     @Override
-    public Equipement getPersoEquipById(String idPerso) {
-        Optional<Perso> perso = this.persoRepository.findById(idPerso);
-        return Objects.requireNonNull(perso.map(this::persoEntityToDto).orElse(null)).getEquipement();
+    public void setPersoClasseById(String idPerso, String classe) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setClasse(classe);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
+    }
+
+    @Override
+    public void setPersoRaceById(String idPerso, String race) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setRace(race);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
+    }
+
+    public void setPersoPvById(String idPerso, int pv) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setPv(pv);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
+    }
+
+    public void setPersoPvMaxById(String idPerso, int pvMax) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setPv_max(pvMax);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
+    }
+
+    @Override
+    public void setPersoLvlById(String idPerso, int lvl) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setNiveau(lvl);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
+    }
+
+    @Override
+    public void setPersoXpById(String idPerso, int xp) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setXp(xp);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
+    }
+
+    @Override
+    public void setPersoXpMaxById(String idPerso, int xpMax) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setXp_max(xpMax);
+            this.persoRepository.save(personnage);
+            System.out.println(personnage.getInventaire());
+        }
     }
 }
