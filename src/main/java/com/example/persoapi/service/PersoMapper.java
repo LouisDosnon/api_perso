@@ -13,6 +13,7 @@ public abstract class PersoMapper {
         perso.setClasse(persoDto.getClasse());
         perso.setPv(persoDto.getPv());
         perso.setPv_max(persoDto.getPv_max());
+        perso.setNiveau(persoDto.getNiveau());
         perso.setXp(persoDto.getXp());
         perso.setXp_max(persoDto.getXp_max());
         perso.setCaracteristique(persoDto.getCaracteristique());
@@ -34,6 +35,7 @@ public abstract class PersoMapper {
         persoDto.setClasse(perso.getClasse());
         persoDto.setPv(perso.getPv());
         persoDto.setPv_max(perso.getPv_max());
+        persoDto.setNiveau(perso.getNiveau());
         persoDto.setXp(perso.getXp());
         persoDto.setXp_max(perso.getXp_max());
         persoDto.setCaracteristique(perso.getCaracteristique());
