@@ -89,7 +89,7 @@ public class EquipementController {
         return this.equipementService.addEquipInAutre(id, equip);
     }
 
-    @DeleteMapping("/autre/{idObjectInv}")
+    @DeleteMapping("/autre/{idEquip}")
 
     public boolean deleteModifById(@PathVariable String id, @PathVariable int idEquip) {
         return this.equipementService.deleteEquipFromAutre(id, idEquip);
