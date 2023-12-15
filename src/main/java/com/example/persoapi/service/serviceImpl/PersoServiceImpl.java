@@ -36,7 +36,7 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
     }
 
     @Override
-    public boolean addPerso(String idPerso, PersoDto persoDto) {
+    public boolean addPerso(String idPerso) {
         Perso newPerso = new Perso();
         this.persoRepository.insert(newPerso);
         return true;

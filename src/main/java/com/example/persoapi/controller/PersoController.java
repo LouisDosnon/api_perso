@@ -28,8 +28,8 @@ public class PersoController {
     }
 
     @PutMapping("/{id}")
-    public boolean addPerso(@PathVariable String id, @RequestBody PersoDto perso) {
-        return this.persoService.addPerso(id, perso);
+    public boolean addPerso(@PathVariable String id) {
+        return this.persoService.addPerso(id);
     }
 
     @DeleteMapping("/{id}")

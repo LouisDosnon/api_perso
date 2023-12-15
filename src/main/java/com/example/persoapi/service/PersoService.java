@@ -8,7 +8,7 @@ public interface PersoService {
     List<PersoDto> getAllPerso();
 
     PersoDto getPersoById(String idPerso);
-    boolean addPerso(String idPerso, PersoDto persoDto);
+    boolean addPerso(String idPerso);
     boolean removePerso(String idPerso);
     void setPersoNomById(String idPerso, String nom);
     void setPersoClasseById(String idPerso, String classe);
