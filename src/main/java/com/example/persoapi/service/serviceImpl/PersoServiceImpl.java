@@ -36,6 +36,18 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
     }
 
     @Override
+    public boolean addPerso(String idPerso, PersoDto persoDto) {
+        this.persoRepository.insert(persoDtoToEntiy(persoDto));
+        return true;
+    }
+
+    @Override
+    public boolean removePerso(String idPerso) {
+        this.persoRepository.deleteById(idPerso);
+        return true;
+    }
+
+    @Override
     public void setPersoNomById(String idPerso, String nom) {
         Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
         Perso personnage;
@@ -43,7 +55,6 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setNom(nom);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
         }
     }
 
@@ -55,7 +66,6 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setClasse(classe);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
         }
     }
 
@@ -67,7 +77,6 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setRace(race);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
         }
     }
 
@@ -78,7 +87,6 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setPv(pv);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
         }
     }
 
@@ -89,7 +97,6 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setPv_max(pvMax);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
         }
     }
 
@@ -101,7 +108,6 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setNiveau(lvl);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
         }
     }
 
@@ -113,7 +119,6 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setXp(xp);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
         }
     }
 
@@ -125,7 +130,17 @@ public class PersoServiceImpl extends PersoMapper implements PersoService {
             personnage = persoOptional.get();
             personnage.setXp_max(xpMax);
             this.persoRepository.save(personnage);
-            System.out.println(personnage.getInventaire());
+        }
+    }
+
+    @Override
+    public void setPersoImageById(String idPerso, String url) {
+        Optional<Perso> persoOptional = this.persoRepository.findById(idPerso);
+        Perso personnage;
+        if (persoOptional.isPresent()) {
+            personnage = persoOptional.get();
+            personnage.setImage(url);
+            this.persoRepository.save(personnage);
         }
     }
 }

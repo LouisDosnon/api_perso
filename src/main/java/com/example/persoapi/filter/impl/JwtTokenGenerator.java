@@ -17,7 +17,7 @@ public class JwtTokenGenerator {
 
             // Créez le token JWT
             return Jwts.builder()
-                    .setSubject("utilisateur123") // Sujet (nom d'utilisateur)
+                    .setSubject(login) // Sujet (nom d'utilisateur)
                     .setExpiration(expirationDate)
                     .signWith(Keys.hmacShaKeyFor(JwtAuthenticationFilter.JWT_KEY.getBytes()), SignatureAlgorithm.HS256)
                     .compact();

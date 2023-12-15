@@ -8,7 +8,8 @@ public interface PersoService {
     List<PersoDto> getAllPerso();
 
     PersoDto getPersoById(String idPerso);
-
+    boolean addPerso(String idPerso, PersoDto persoDto);
+    boolean removePerso(String idPerso);
     void setPersoNomById(String idPerso, String nom);
     void setPersoClasseById(String idPerso, String classe);
     void setPersoRaceById(String idPerso, String race);
@@ -17,4 +18,5 @@ public interface PersoService {
     void setPersoLvlById(String idPerso, int lvl);
     void setPersoXpById(String idPerso, int xp);
     void setPersoXpMaxById(String idPerso, int xpMax);
+    void setPersoImageById(String idPerso, String url);
 }

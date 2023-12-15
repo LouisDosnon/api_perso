@@ -27,6 +27,16 @@ public class PersoController {
         return this.persoService.getPersoById(id);
     }
 
+    @PutMapping("/{id}")
+    public boolean addPerso(@PathVariable String id, @RequestBody PersoDto perso) {
+        return this.persoService.addPerso(id, perso);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean removePerso(@PathVariable String id) {
+        return this.persoService.removePerso(id);
+    }
+
     @PostMapping("/{id}/nom")
     public Response setNomById(@PathVariable String id, @RequestBody String nom) {
         this.persoService.setPersoNomById(id, nom);
@@ -72,6 +82,12 @@ public class PersoController {
     @PostMapping("/{id}/xp_max")
     public Response setXpMaxById(@PathVariable String id, @RequestBody int xpMax) {
         this.persoService.setPersoXpMaxById(id, xpMax);
+        return Response.ok().build();
+    }
+
+    @PostMapping("{id}/image")
+    public Response setImageById(@PathVariable String id, @RequestBody String url) {
+        this.persoService.setPersoImageById(id, url);
         return Response.ok().build();
     }
 }
