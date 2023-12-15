@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -32,4 +33,24 @@ public class Perso {
     private List<CoupS> coup_speciaux;
     @Field("modificateurs.listModif")
     private List<Modificateur> modificateurs;
+
+    public Perso(String id) {
+        this.id = id;
+        this.image = "";
+        this.nom = "nom";
+        this.race = "race";
+        this.classe = "classe";
+        this.niveau = 1;
+        this.pv = 0;
+        this.pv_max = 0;
+        this.xp = 0;
+        this.xp_max = 100;
+        this.caracteristique = new Caracteristique();
+        this.competences = new ArrayList<>();
+        this.equipement = new Equipement();
+        this.inventaire = new ArrayList<>();
+        this.monaie = new Monaie();
+        this.coup_speciaux = new ArrayList<>();
+        this.modificateurs = new ArrayList<>();
+    }
 }

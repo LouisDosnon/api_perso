@@ -51,4 +51,17 @@ public class Caracteristique {
     public void setEnergie_astrale_max(long energie_astrale_max) {
         this.energie_astrale_max = energie_astrale_max;
     }
+
+    public Caracteristique() {
+        this.charisme = 0;
+        this.courage = 0;
+        this.adresse = 0;
+        this.intelligence = 0;
+        this.force = 0;
+        this.attaque = 0;
+        this.parade = 0;
+        this.destin = 0;
+        this.energie_astrale = 0;
+        this.energie_astrale_max = 0;
+    }
 }

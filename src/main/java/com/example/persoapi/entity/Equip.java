@@ -9,4 +9,9 @@ public class Equip {
     private String desc;
     @JsonProperty("nom")
     private String nom;
+
+    public Equip() {
+        this.nom = "";
+        this.desc = "";
+    }
 }

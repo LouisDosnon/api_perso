@@ -3,6 +3,7 @@ package com.example.persoapi.entity;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -71,5 +72,18 @@ public class Equipement {
 
     public List<Equip> getAutre() {
         return autre;
+    }
+
+    public Equipement() {
+        this.tete_int = new Equip();
+        this.tete_ext = new Equip();
+        this.torse_int = new Equip();
+        this.torse_ext = new Equip();
+        this.jambe_int = new Equip();
+        this.jambe_ext = new Equip();
+        this.pied_int = new Equip();
+        this.pied_ext = new Equip();
+        this.arme = new Equip();
+        this.autre = new ArrayList<>();
     }
 }

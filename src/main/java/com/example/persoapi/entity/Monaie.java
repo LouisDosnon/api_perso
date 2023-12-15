@@ -35,4 +35,10 @@ public class Monaie {
     public void setBronze(long bronze) {
         this.bronze = bronze;
     }
+
+    public Monaie() {
+        this.or = 0;
+        this.argent = 0;
+        this.bronze = 0;
+    }
 }
