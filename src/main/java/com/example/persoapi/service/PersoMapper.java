@@ -5,8 +5,7 @@ import com.example.persoapi.entity.Perso;
 
 public abstract class PersoMapper {
     public Perso persoDtoToEntiy(PersoDto persoDto) {
-        Perso perso = new Perso();
-        perso.setId(persoDto.getId());
+        Perso perso = new Perso(persoDto.getId());
         perso.setNom(persoDto.getNom());
         perso.setImage(persoDto.getImage());
         perso.setRace(persoDto.getRace());
